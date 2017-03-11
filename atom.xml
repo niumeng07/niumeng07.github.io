@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>老牛的博客</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://niumeng07.github.io/"/>
+  <updated>2017-03-11T13:27:12.000Z</updated>
+  <id>https://niumeng07.github.io/</id>
+  
+  <author>
+    <name>老牛</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello</title>
+    <link href="https://niumeng07.github.io/2017/03/11/Hello/"/>
+    <id>https://niumeng07.github.io/2017/03/11/Hello/</id>
+    <published>2017-03-11T13:27:12.000Z</published>
+    <updated>2017-03-11T13:27:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;做为程序员，怎么能用现成的博客呢。只有用Github搭起的博客才显得高大上，才显得Geek。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
