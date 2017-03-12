@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title><![CDATA[Python-Multi-thread]]></title>
+      <title><![CDATA[Python 的多线程编程]]></title>
       <url>https://niumeng07.github.io/posts/eb642ea4/</url>
       <content type="html"><![CDATA[<p>虽然使用 Python 已经很长时间，但一般用于不太复杂的数据处理任务，最近研究 Tensorflow 时，需要处理大批量数据，Python 处理速度慢的问的显现出来，因为特意研究了一下 Python 的并行编程，记录在此，以备忘。<br><a id="more"></a></p>
 <p>我此次主要使用了 map 函数来达到并行的效果，原理和之前使用的 Java 线程池方法有些类似。</p>
