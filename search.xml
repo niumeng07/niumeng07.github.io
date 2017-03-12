@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title><![CDATA[Python-Multi-thread]]></title>
+      <url>https://niumeng07.github.io/posts/eb642ea4/</url>
+      <content type="html"><![CDATA[<p>虽然使用 Python 已经很长时间，但一般用于不太复杂的数据处理任务，最近研究 Tensorflow 时，需要处理大批量数据，Python 处理速度慢的问的显现出来，因为特意研究了一下 Python 的并行编程，记录在此，以备忘。<br><a id="more"></a></p>
+<p>我此次主要使用了 map 函数来达到并行的效果，原理和之前使用的 Java 线程池方法有些类似。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">processfile</span><span class="params">(file)</span>:</span></div><div class="line">  <span class="keyword">return</span> something</div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">multirun</span><span class="params">(fun,path)</span>:</span>                                                                   </div><div class="line">  pool = ThreadPool()</div><div class="line">  files = [ path + f <span class="keyword">for</span> f <span class="keyword">in</span> os.listdir(path) <span class="keyword">if</span> os.path.isfile(os.path.join(path, f)) ]</div><div class="line">  result = pool.map(fun, files)   <span class="comment">#files是传入参数，需要支持iterator, 比如list等，返回result与被构造成list</span></div><div class="line"></div><div class="line">  pool.close()</div><div class="line">  pool.join()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">  multirun(processfile, <span class="string">"./2017030209/Sample4hour/"</span>)</div></pre></td></tr></table></figure>
+<p><br><br>Python 还有 subprocess 模块可实现并行化。不表。<br><br></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 备忘 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 并行编程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[基于 Github Pages 和 Hexo 搭建博客过程备忘]]></title>
       <url>https://niumeng07.github.io/posts/7998670d/</url>
       <content type="html"><![CDATA[<p>做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。<br><br>该博客基于<a href="https://hexo.io/docs/" target="_blank" rel="external">官网手册</a>说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 <a href="https:www.google.com/ncr" target="_blank" rel="external">Google</a>， 都能找到答案。在此记录一下使用的工具，算是备忘。<br><br>该博客基于 <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> 和 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也可以在 VPS 搭网站，但我目前还没确定选用哪个框架，如果有高手不小心进了这里，倒是可以给点建议。先行谢过。<br><a id="more"></a></p>

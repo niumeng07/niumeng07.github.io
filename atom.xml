@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://niumeng07.github.io/"/>
-  <updated>2017-03-12T15:10:10.000Z</updated>
+  <updated>2017-03-12T15:22:16.000Z</updated>
   <id>https://niumeng07.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python-Multi-thread</title>
+    <link href="https://niumeng07.github.io/posts/eb642ea4/"/>
+    <id>https://niumeng07.github.io/posts/eb642ea4/</id>
+    <published>2017-03-12T15:12:43.000Z</published>
+    <updated>2017-03-12T15:22:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然使用 Python 已经很长时间，但一般用于不太复杂的数据处理任务，最近研究 Tensorflow 时，需要处理大批量数据，Python 处理速度慢的问的显现出来，因为特意研究了一下 Python 的并行编程，记录在此，以备忘。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="备忘" scheme="https://niumeng07.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+    
+    
+      <category term="Python" scheme="https://niumeng07.github.io/tags/Python/"/>
+    
+      <category term="并行编程" scheme="https://niumeng07.github.io/tags/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>基于 Github Pages 和 Hexo 搭建博客过程备忘</title>
