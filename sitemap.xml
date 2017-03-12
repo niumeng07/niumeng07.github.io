@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://niumeng07.github.io/about/index.html</loc>
+    
+    <lastmod>2017-03-12T10:50:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://niumeng07.github.io/posts/7998670d/</loc>
     
-    <lastmod>2017-03-12T09:01:02.000Z</lastmod>
+    <lastmod>2017-03-12T09:18:46.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://niumeng07.github.io/tags/index.html</loc>
     
     <lastmod>2017-03-12T05:24:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://niumeng07.github.io/about/index.html</loc>
-    
-    <lastmod>2017-03-12T05:22:26.000Z</lastmod>
     
   </url>
   
