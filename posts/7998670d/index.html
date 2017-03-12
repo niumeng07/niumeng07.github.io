@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://niumeng07.github.io/posts/7998670d/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
 <meta property="og:description" content="做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。该博客基于官网手册说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 Google， 都能找到答案。在此记录一下使用的工具，算是备忘。该博客基于 Github Pages 和 Hexo 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也">
-<meta property="og:updated_time" content="2017-03-12T15:02:50.000Z">
+<meta property="og:updated_time" content="2017-03-12T15:03:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 Github Pages 和 Hexo搭建博客过程备忘">
 <meta name="twitter:description" content="做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。该博客基于官网手册说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 Google， 都能找到答案。在此记录一下使用的工具，算是备忘。该博客基于 Github Pages 和 Hexo 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也">
@@ -267,7 +267,7 @@
   
     <div class="article-meta">
       <a href="/posts/7998670d/" class="article-date">
-      <time datetime="2017-03-12T15:02:50.000Z" itemprop="datePublished">2017-03-12</time>
+      <time datetime="2017-03-12T15:03:21.000Z" itemprop="datePublished">2017-03-12</time>
 </a>
 
 
@@ -308,7 +308,7 @@
       
           
         <p>做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。<br><br>该博客基于<a href="https://hexo.io/docs/" target="_blank" rel="external">官网手册</a>说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 <a href="https:www.google.com/ncr" target="_blank" rel="external">Google</a>， 都能找到答案。在此记录一下使用的工具，算是备忘。<br><br>该博客基于 <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> 和 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也可以在 VPS 搭网站，但我目前还没确定选用哪个框架，如果有高手不小心进了这里，倒是可以给点建议。先行谢过。<br><a id="more"></a></p>
-<p>本地操作系统: macOS Sierra<br>服&ensp;务&ensp;器:   <a href="https://github.com/" target="_blank" rel="external">Github</a><br>框&ensp;&ensp;&ensp;&ensp;架:     <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a><br>主&ensp;&ensp;&ensp;&ensp;题:     <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a><br>评论系统: <a href="https://help.disqus.com" target="_blank" rel="external">Disqus</a><br>本地工具: <a href="https://nodejs.org/en/" target="_blank" rel="external">NodeJS</a>, <a href="https://git-scm.com/" target="_blank" rel="external">Git</a>  </p>
+<p>操作系统: macOS Sierra<br>服&ensp;务&ensp;器:   <a href="https://github.com/" target="_blank" rel="external">Github</a><br>框&ensp;&ensp;&ensp;&ensp;架:     <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a><br>主&ensp;&ensp;&ensp;&ensp;题:     <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a><br>评论系统: <a href="https://help.disqus.com" target="_blank" rel="external">Disqus</a><br>本地工具: <a href="https://nodejs.org/en/" target="_blank" rel="external">NodeJS</a>, <a href="https://git-scm.com/" target="_blank" rel="external">Git</a>  </p>
 <h2 id="准备Github"><a href="#准备Github" class="headerlink" title="准备Github"></a>准备Github</h2><h3 id="注册-Github"><a href="#注册-Github" class="headerlink" title="注册 Github."></a>注册 Github.</h3><h3 id="生成-ssh-key-并添加到-Github"><a href="#生成-ssh-key-并添加到-Github" class="headerlink" title="生成 ssh-key 并添加到 Github."></a>生成 ssh-key 并添加到 Github.</h3><p>可执行如下命令验证上述步骤是否成功.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
 <h3 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"user_name"</span></div><div class="line">$ git config --global user.email  <span class="string">"yourmail"</span></div></pre></td></tr></table></figure>
 <h3 id="在github上建立博客仓库"><a href="#在github上建立博客仓库" class="headerlink" title="在github上建立博客仓库"></a>在github上建立博客仓库</h3><p>仓库 project name 必须为 your_github_name.github.io, 其它可根据自己爱好填写。</p>
@@ -336,8 +336,8 @@
     <div class="copyright">
         <p><span>Title:</span><a href="/posts/7998670d/">基于 Github Pages 和 Hexo搭建博客过程备忘</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Niumeng</a></p>
-        <p><span>Created:</span>2017-03-12, 23:02:50</p>
-        <p><span>Updated:</span>2017-03-12, 23:02:50</p>
+        <p><span>Created:</span>2017-03-12, 23:03:21</p>
+        <p><span>Updated:</span>2017-03-12, 23:03:21</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/posts/7998670d/" title="基于 Github Pages 和 Hexo搭建博客过程备忘">https://niumeng07.github.io/posts/7998670d/</a>
             <span class="copy-path" data-clipboard-text="From https://niumeng07.github.io/posts/7998670d/　　By Niumeng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
