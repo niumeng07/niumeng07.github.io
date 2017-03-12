@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>https://niumeng07.github.io/about/</loc>
+        <lastmod>2017-03-12T03:23:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://niumeng07.github.io/essay/</loc>
         <lastmod>2017-03-11T15:57:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,13 +30,6 @@
     <url>
         <loc>https://niumeng07.github.io/tags/index-1.html</loc>
         <lastmod>2017-03-11T12:56:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://niumeng07.github.io/about/</loc>
-        <lastmod>2017-03-11T12:55:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
