@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[基于 Tensorflow 的 Google Wide & Deep Learning Model]]></title>
+      <url>https://niumeng07.github.io/posts/515729c0/</url>
+      <content type="html"><![CDATA[<p>Google 的 <a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow</a> 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 <a href="https://www.tensorflow.org/tutorials/wide_and_deep" target="_blank" rel="external">Wide &amp; Deep Model</a>，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Blog 等只是解析了该模型怎么用，或者说是把 Google 的一些 Tutorial 翻译了一遍，但是并没有对使用过程中可能存在的问题做出深入分析，或者说并没有把可能遇到问题的地方展现出来。因此我希望在这一方面写一写自己的经历，供大家参考。<br><br><br>本文采用实验记录的方式展开，可能也会存在许多问题，但这些问题可能大家也会遇到或者遇到过，希望能共同讨论。<br><a id="more"></a><br><br></p>
+<h2 id="待展开。"><a href="#待展开。" class="headerlink" title="待展开。"></a>待展开。</h2>]]></content>
+      
+        <categories>
+            
+            <category> 学习&amp;探索 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Tensorflow </tag>
+            
+            <tag> Wide &amp; Deep </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python 的多线程编程]]></title>
       <url>https://niumeng07.github.io/posts/eb642ea4/</url>
       <content type="html"><![CDATA[<p>虽然使用 Python 已经很长时间，但一般用于不太复杂的数据处理任务，最近研究 Tensorflow 时，需要处理大批量数据，Python 处理速度慢的问的显现出来，因为特意研究了一下 Python 的并行编程，记录在此，以备忘。<br><a id="more"></a></p>

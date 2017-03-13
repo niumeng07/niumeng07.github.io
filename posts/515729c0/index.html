@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="layout: tagstitle: tags">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Niumeng's Blog">
-<meta property="og:url" content="https://niumeng07.github.io/tags/index.html">
+<meta name="description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于 Tensorflow 的 Google Wide & Deep Learning Model">
+<meta property="og:url" content="https://niumeng07.github.io/posts/515729c0/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
-<meta property="og:description" content="layout: tagstitle: tags">
-<meta property="og:updated_time" content="2017-03-12T05:24:38.000Z">
+<meta property="og:description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
+<meta property="og:updated_time" content="2017-03-13T12:16:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niumeng's Blog">
-<meta name="twitter:description" content="layout: tagstitle: tags">
+<meta name="twitter:title" content="基于 Tensorflow 的 Google Wide & Deep Learning Model">
+<meta name="twitter:description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Niumeng&#39;s Blog</title>
+<title>基于 Tensorflow 的 Google Wide &amp; Deep Learning Model | Niumeng&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,7 +66,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -263,11 +263,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Learn-Tensorflow" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-03-12T05:24:38.000Z" itemprop="datePublished">2017-03-12</time>
+      <a href="/posts/515729c0/" class="article-date">
+      <time datetime="2017-03-13T11:35:35.000Z" itemprop="datePublished">2017-03-13</time>
 </a>
 
 
@@ -278,105 +278,169 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于 Tensorflow 的 Google Wide &amp; Deep Learning Model
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习-探索/">学习&探索</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tensorflow/">Tensorflow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wide-Deep/">Wide & Deep</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/备忘/">备忘</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习-探索/">学习&探索</a><span class="category-list-count">1</span></li></ul>
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/Deep-Learning/" style="font-size: 16px; color: #808080">Deep Learning</a> <a href="/tags/Github-Pages/" style="font-size: 16px; color: #808080">Github Pages</a> <a href="/tags/Hexo/" style="font-size: 16px; color: #808080">Hexo</a> <a href="/tags/Python/" style="font-size: 16px; color: #808080">Python</a> <a href="/tags/Tensorflow/" style="font-size: 16px; color: #808080">Tensorflow</a> <a href="/tags/Wide-Deep/" style="font-size: 16px; color: #808080">Wide & Deep</a> <a href="/tags/Yelee/" style="font-size: 16px; color: #808080">Yelee</a> <a href="/tags/并行编程/" style="font-size: 16px; color: #808080">并行编程</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-         <span><script>document.write($(".category-list-item").length)</script></span>Categories,
-         <span><script>document.write($(".tags > a").length)</script></span>Tags
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        <p>layout: tags<br>title: tags</p>
-
+        <p>Google 的 <a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow</a> 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 <a href="https://www.tensorflow.org/tutorials/wide_and_deep" target="_blank" rel="external">Wide &amp; Deep Model</a>，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Blog 等只是解析了该模型怎么用，或者说是把 Google 的一些 Tutorial 翻译了一遍，但是并没有对使用过程中可能存在的问题做出深入分析，或者说并没有把可能遇到问题的地方展现出来。因此我希望在这一方面写一写自己的经历，供大家参考。<br><br><br>本文采用实验记录的方式展开，可能也会存在许多问题，但这些问题可能大家也会遇到或者遇到过，希望能共同讨论。<br><a id="more"></a><br><br></p>
+<h2 id="待展开。"><a href="#待展开。" class="headerlink" title="待展开。"></a>待展开。</h2>
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/posts/515729c0/">基于 Tensorflow 的 Google Wide &amp; Deep Learning Model</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Niumeng</a></p>
+        <p><span>Created:</span>2017-03-13, 19:35:35</p>
+        <p><span>Updated:</span>2017-03-13, 20:16:10</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/posts/515729c0/" title="基于 Tensorflow 的 Google Wide &amp; Deep Learning Model">https://niumeng07.github.io/posts/515729c0/</a>
+            <span class="copy-path" data-clipboard-text="From https://niumeng07.github.io/posts/515729c0/　　By Niumeng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/posts/eb642ea4/">
+                    Python 的多线程编程
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#待展开。"><span class="toc-number">1.</span> <span class="toc-text">待展开。</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"基于 Tensorflow 的 Google Wide & Deep Learning Model　| Niumeng's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
 
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://niumeng07.github.io/posts/515729c0/';
+            this.page.identifier = 'posts/515729c0/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//niumeng.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/posts/eb642ea4/" title="Next: Python 的多线程编程">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/posts/515729c0/">基于 Tensorflow 的 Google Wide & Deep Learning Model</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/eb642ea4/">Python 的多线程编程</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/7998670d/">基于 Github Pages 和 Hexo 搭建博客过程备忘</a></li></ul>
 
 
 

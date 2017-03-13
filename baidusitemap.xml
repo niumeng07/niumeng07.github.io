@@ -4,16 +4,42 @@
 
     
   <url>
-    <loc>https://niumeng07.github.io/posts/eb642ea4/</loc>
-    <lastmod>2017-03-12T15:39:16.000Z</lastmod>
+    <loc>https://niumeng07.github.io/posts/515729c0/</loc>
+    <lastmod>2017-03-13T12:16:10.000Z</lastmod>
     <data>
         <display>
-        <title>Python 的多线程编程</title>
-        <pubTime>2017-03-12T15:12:43.000Z</pubTime>
+        <title>基于 Tensorflow 的 Google Wide & Deep Learning Model</title>
+        <pubTime>2017-03-13T11:35:35.000Z</pubTime>
         
-        <tag>Python</tag>
+        <tag>Deep Learning</tag>
          
-        <tag>并行编程</tag>
+        <tag>Tensorflow</tag>
+         
+        <tag>Wide &amp; Deep</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习&amp;探索" url="https://niumeng07.github.io/categories/%E5%AD%A6%E4%B9%A0-%E6%8E%A2%E7%B4%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://niumeng07.github.io/posts/7998670d/</loc>
+    <lastmod>2017-03-13T12:07:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>基于 Github Pages 和 Hexo 搭建博客过程备忘</title>
+        <pubTime>2017-03-10T15:12:43.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Yelee</tag>
+         
+        <tag>Github Pages</tag>
          
          
            
@@ -26,18 +52,16 @@
 
     
   <url>
-    <loc>https://niumeng07.github.io/posts/7998670d/</loc>
-    <lastmod>2017-03-12T15:10:10.000Z</lastmod>
+    <loc>https://niumeng07.github.io/posts/eb642ea4/</loc>
+    <lastmod>2017-03-12T15:39:16.000Z</lastmod>
     <data>
         <display>
-        <title>基于 Github Pages 和 Hexo 搭建博客过程备忘</title>
-        <pubTime>2017-03-12T15:10:10.000Z</pubTime>
+        <title>Python 的多线程编程</title>
+        <pubTime>2017-03-12T15:12:43.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>Python</tag>
          
-        <tag>Yelee</tag>
-         
-        <tag>Github Pages</tag>
+        <tag>并行编程</tag>
          
          
            
