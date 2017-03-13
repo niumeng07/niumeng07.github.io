@@ -7,21 +7,14 @@
       <title><![CDATA[基于 Tensorflow 的 Google Wide & Deep Learning Model]]></title>
       <url>https://niumeng07.github.io/posts/515729c0/</url>
       <content type="html"><![CDATA[<p>Google 的 <a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow</a> 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 <a href="https://www.tensorflow.org/tutorials/wide_and_deep" target="_blank" rel="external">Wide &amp; Deep Model</a>，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Blog 等只是解析了该模型怎么用，或者说是把 Google 的一些 Tutorial 翻译了一遍，但是并没有对使用过程中可能存在的问题做出深入分析，或者说并没有把可能遇到问题的地方展现出来。因此我希望在这一方面写一写自己的经历，供大家参考。</p>
-<p><br></p>
 <p>本文采用实验记录的方式展开，可能也会存在许多问题，但这些问题可能大家也会遇到或者遇到过，希望能共同讨论。</p>
 <a id="more"></a>
-<p><br></p>
 <h2 id="Tensorflow-的安装"><a href="#Tensorflow-的安装" class="headerlink" title="Tensorflow 的安装"></a>Tensorflow 的安装</h2><p>在 CentOS6.5 和 macOS Sirrra 上分别安装过 Tensorflow。</p>
-<p><br></p>
 <h3 id="在-CentOS6-5-系统中安装"><a href="#在-CentOS6-5-系统中安装" class="headerlink" title="在 CentOS6.5 系统中安装"></a>在 CentOS6.5 系统中安装</h3><p>第一次是在 CentOS 上，安装过程还是比较麻烦的，需要下载代码编译安装，依赖也需要一个一个手工安装，还有一个比较重要的问题需要指出，CentOS6.5 的 GLIBC 版本过低，需要手工升级，升级过程还是有一些风险的，因为需要替换系统底层库文件( <code>/usr/lib64/libstdc++.so.6</code>，可用 <code>strings /usr/lib64/libstdc++.so.6 | grep GLIBC</code> 的方式查看其版本)，曾新眼目睹某同事因为替换这一文件而搞崩掉一台机器（崩掉是指: 直接掉线，无法进入系统，无法进行任何操作），最后我找到一个折中的办法，安装新版 <code>glibc</code> 后并不直接替换系统原有文件，而是每次需要的时候手动指定加载（可直接写到一个文件里，需要时 source 一下即可），以运行 python 为例，代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /opt/glibc-2.17/lib/ld-linux-x86-64.so.2 --library-path /opt/glibc-2.17/lib:<span class="variable">$LD_LIBRART_PATH</span> python</div></pre></td></tr></table></figure></p>
 <p>上面语句中，python 之前是指定 GLIBC 版本，python 为本次执行的命令，可修改为你需要执行的命令。</p>
-<p><br></p>
 <h3 id="在-MAC-系统中安装"><a href="#在-MAC-系统中安装" class="headerlink" title="在 MAC 系统中安装"></a>在 MAC 系统中安装</h3><p>第二次安装是在 macOS Sierra 系统中，当时 Tensorflow 已经支持 pip 安装了，安装过程十分简洁。</p>
-<p><br></p>
 <h2 id="本文重点使用的-Tensorflow-库文件"><a href="#本文重点使用的-Tensorflow-库文件" class="headerlink" title="本文重点使用的 Tensorflow 库文件"></a>本文重点使用的 Tensorflow 库文件</h2><p>大部分内容位置该<a href="https://github.com/niumeng07/tensorflow/tree/master/tensorflow/contrib/learn/python/learn/estimators" target="_blank" rel="external">目录</a>中，包括<a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py" target="_blank" rel="external">dnn_linear_combined.py</a>, <a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/estimator.py" target="_blank" rel="external">estimator.py</a>。这两个文件是该实验的入口，其它还有一些内容需要熟悉，从两这个文件展开即可。</p>
-<p><br></p>
 <h2 id="其它一些可用的库"><a href="#其它一些可用的库" class="headerlink" title="其它一些可用的库"></a>其它一些可用的库</h2><p>这一部分只是我了解过的，使用还不多，暂时写在这里，等尝试过后再展开。<br><a href="https://github.com/tflearn/tflearn/" target="_blank" rel="external">tf-learn</a><br><a href="https://github.com/yahoo/TensorFlowOnSpark" target="_blank" rel="external">TensorflowOnSpark</a>: 雅虎出品</p>
-<p><br></p>
 <h2 id="Wide-amp-Deep-Model"><a href="#Wide-amp-Deep-Model" class="headerlink" title="Wide &amp; Deep Model"></a>Wide &amp; Deep Model</h2><p>本文的重点到这里才开始。</p>
 <h2 id="待展开。"><a href="#待展开。" class="headerlink" title="待展开。"></a>待展开。</h2>]]></content>
       
@@ -83,7 +76,8 @@
 <p>在浏览器中打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>， 可查看是否成功。</p>
 <h3 id="修改主题"><a href="#修改主题" class="headerlink" title=" 修改主题"></a><strong> 修改主题</strong></h3><p>在<a href="https://hexo.io/themes/" target="_blank" rel="external"> Hexo 官网 Theme 选项卡</a>中给出了许多主题，只需挑选并下载自己喜欢的，并进行简单配置即可，配置方法一般在主题的 README.md 文件中可查。我使用的是 Yelee 主题，文首已给出连接。</p>
 <h3 id="安装评价系统"><a href="#安装评价系统" class="headerlink" title=" 安装评价系统"></a><strong> 安装评价系统</strong></h3><p>评价系统有 <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>, <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>可选。区别是多说使用国内的微信、新浪微博等做为登录验证， Disqus 使用国外的 Facebook 等做为登录验证，我使用的是 Disqus。 其实在国内使用多说的话速度会更快。不论使用哪一个，都需要到其官网注册帐户，并在网站根目录配置文件加入以下内容。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 评论</span></div><div class="line">share_jia: <span class="literal">true</span></div><div class="line"><span class="comment"># 分享</span></div><div class="line">duoshuo: <span class="literal">false</span>                        </div><div class="line">disqus_shrtname: your_disqus_short_name  <span class="comment"># 注：多说和 disqus 只需开启一个，另一个设置为 false。</span></div></pre></td></tr></table></figure></p>
-<h3 id="其它功能"><a href="#其它功能" class="headerlink" title=" 其它功能"></a><strong> 其它功能</strong></h3><p><strong> 图床功能 </strong><br>我使用的是七牛免费的图床功能，上床图片到七牛云后，直接在博客文章中添加外链即可。<br><br><br>此外，我还安装了搜索map等功能，但插件安装可查资料较多，或者直接查看插件 README 文件，这里不再述说。</p>
+<h3 id="其它功能"><a href="#其它功能" class="headerlink" title=" 其它功能"></a><strong> 其它功能</strong></h3><p><strong> 图床功能 </strong><br>我使用的是七牛免费的图床功能，上床图片到七牛云后，直接在博客文章中添加外链即可。</p>
+<p>此外，我还安装了搜索map等功能，但插件安装可查资料较多，或者直接查看插件 README 文件，这里不再述说。</p>
 <h2 id="Hexo-一些使用方法"><a href="#Hexo-一些使用方法" class="headerlink" title="Hexo 一些使用方法"></a>Hexo 一些使用方法</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title=" 新建文章 "></a><strong> 新建文章 </strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n <span class="string">"article_name"</span></div></pre></td></tr></table></figure>
 <p>以上命令会在 <code>blog_root/source/_post/</code>目录下生成article_name.md 文件，修改该文件为待发布内容。</p>
 <h3 id="添加页面"><a href="#添加页面" class="headerlink" title=" 添加页面 "></a><strong> 添加页面 </strong></h3><p>可使用如下命令添加页面。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new page <span class="string">"about"</span></div><div class="line">$ hexo new page <span class="string">"tags"</span></div></pre></td></tr></table></figure></p>
@@ -91,7 +85,7 @@
 <h3 id="本地预览"><a href="#本地预览" class="headerlink" title=" 本地预览 "></a><strong> 本地预览 </strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s   <span class="comment"># 在浏览器本地打开[页面](http://localhost:4000/)查看是否符合预期</span></div></pre></td></tr></table></figure>
 <h3 id="发布"><a href="#发布" class="headerlink" title=" 发布 "></a><strong> 发布 </strong></h3><p>使用 <code>hexo deploy</code> 部署之前，需要对 <code>blog_root/_config.yml</code> 做如下修改。（同时，deploy 不仅限制部署网站到 Github Pages，还可部署到其它平台）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    <span class="built_in">type</span>: git</div><div class="line">    repository: https://github.com/niumeng07/niumeng07.github.io.git</div><div class="line">    branch: master</div></pre></td></tr></table></figure></p>
 <p>使用如下命令发布。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d    <span class="comment"># 发布完成打开http://your_github_name.github.io 查看。</span></div></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p><br><br><br><br><br><br></p>
 ]]></content>
       
         <categories>

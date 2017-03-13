@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://niumeng07.github.io/posts/7998670d/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
 <meta property="og:description" content="做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。该博客基于官网手册说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 Google， 都能找到答案。在此记录一下使用的工具，算是备忘。该博客基于 Github Pages 和 Hexo 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也">
-<meta property="og:updated_time" content="2017-03-13T12:07:44.000Z">
+<meta property="og:updated_time" content="2017-03-13T16:05:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 Github Pages 和 Hexo 搭建博客过程备忘">
 <meta name="twitter:description" content="做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。该博客基于官网手册说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 Google， 都能找到答案。在此记录一下使用的工具，算是备忘。该博客基于 Github Pages 和 Hexo 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也">
@@ -317,7 +317,8 @@
 <p>在浏览器中打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>， 可查看是否成功。</p>
 <h3 id="修改主题"><a href="#修改主题" class="headerlink" title=" 修改主题"></a><strong> 修改主题</strong></h3><p>在<a href="https://hexo.io/themes/" target="_blank" rel="external"> Hexo 官网 Theme 选项卡</a>中给出了许多主题，只需挑选并下载自己喜欢的，并进行简单配置即可，配置方法一般在主题的 README.md 文件中可查。我使用的是 Yelee 主题，文首已给出连接。</p>
 <h3 id="安装评价系统"><a href="#安装评价系统" class="headerlink" title=" 安装评价系统"></a><strong> 安装评价系统</strong></h3><p>评价系统有 <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>, <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>可选。区别是多说使用国内的微信、新浪微博等做为登录验证， Disqus 使用国外的 Facebook 等做为登录验证，我使用的是 Disqus。 其实在国内使用多说的话速度会更快。不论使用哪一个，都需要到其官网注册帐户，并在网站根目录配置文件加入以下内容。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 评论</span></div><div class="line">share_jia: <span class="literal">true</span></div><div class="line"><span class="comment"># 分享</span></div><div class="line">duoshuo: <span class="literal">false</span>                        </div><div class="line">disqus_shrtname: your_disqus_short_name  <span class="comment"># 注：多说和 disqus 只需开启一个，另一个设置为 false。</span></div></pre></td></tr></table></figure></p>
-<h3 id="其它功能"><a href="#其它功能" class="headerlink" title=" 其它功能"></a><strong> 其它功能</strong></h3><p><strong> 图床功能 </strong><br>我使用的是七牛免费的图床功能，上床图片到七牛云后，直接在博客文章中添加外链即可。<br><br><br>此外，我还安装了搜索map等功能，但插件安装可查资料较多，或者直接查看插件 README 文件，这里不再述说。</p>
+<h3 id="其它功能"><a href="#其它功能" class="headerlink" title=" 其它功能"></a><strong> 其它功能</strong></h3><p><strong> 图床功能 </strong><br>我使用的是七牛免费的图床功能，上床图片到七牛云后，直接在博客文章中添加外链即可。</p>
+<p>此外，我还安装了搜索map等功能，但插件安装可查资料较多，或者直接查看插件 README 文件，这里不再述说。</p>
 <h2 id="Hexo-一些使用方法"><a href="#Hexo-一些使用方法" class="headerlink" title="Hexo 一些使用方法"></a>Hexo 一些使用方法</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title=" 新建文章 "></a><strong> 新建文章 </strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n <span class="string">"article_name"</span></div></pre></td></tr></table></figure>
 <p>以上命令会在 <code>blog_root/source/_post/</code>目录下生成article_name.md 文件，修改该文件为待发布内容。</p>
 <h3 id="添加页面"><a href="#添加页面" class="headerlink" title=" 添加页面 "></a><strong> 添加页面 </strong></h3><p>可使用如下命令添加页面。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new page <span class="string">"about"</span></div><div class="line">$ hexo new page <span class="string">"tags"</span></div></pre></td></tr></table></figure></p>
@@ -325,7 +326,7 @@
 <h3 id="本地预览"><a href="#本地预览" class="headerlink" title=" 本地预览 "></a><strong> 本地预览 </strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s   <span class="comment"># 在浏览器本地打开[页面](http://localhost:4000/)查看是否符合预期</span></div></pre></td></tr></table></figure>
 <h3 id="发布"><a href="#发布" class="headerlink" title=" 发布 "></a><strong> 发布 </strong></h3><p>使用 <code>hexo deploy</code> 部署之前，需要对 <code>blog_root/_config.yml</code> 做如下修改。（同时，deploy 不仅限制部署网站到 Github Pages，还可部署到其它平台）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    <span class="built_in">type</span>: git</div><div class="line">    repository: https://github.com/niumeng07/niumeng07.github.io.git</div><div class="line">    branch: master</div></pre></td></tr></table></figure></p>
 <p>使用如下命令发布。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d    <span class="comment"># 发布完成打开http://your_github_name.github.io 查看。</span></div></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p><br><br><br><br><br><br></p>
 
       
     </div>
@@ -337,7 +338,7 @@
         <p><span>Title:</span><a href="/posts/7998670d/">基于 Github Pages 和 Hexo 搭建博客过程备忘</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Niumeng</a></p>
         <p><span>Created:</span>2017-03-10, 23:12:43</p>
-        <p><span>Updated:</span>2017-03-13, 20:07:44</p>
+        <p><span>Updated:</span>2017-03-14, 00:05:24</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/posts/7998670d/" title="基于 Github Pages 和 Hexo 搭建博客过程备忘">https://niumeng07.github.io/posts/7998670d/</a>
             <span class="copy-path" data-clipboard-text="From https://niumeng07.github.io/posts/7998670d/　　By Niumeng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
