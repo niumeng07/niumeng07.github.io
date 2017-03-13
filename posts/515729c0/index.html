@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://niumeng07.github.io/posts/515729c0/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
 <meta property="og:description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
-<meta property="og:updated_time" content="2017-03-13T16:09:04.000Z">
+<meta property="og:updated_time" content="2017-03-13T16:13:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 Tensorflow 的 Google Wide & Deep Learning Model">
 <meta name="twitter:description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
@@ -314,7 +314,7 @@
 <h3 id="在-CentOS6-5-系统中安装"><a href="#在-CentOS6-5-系统中安装" class="headerlink" title="在 CentOS6.5 系统中安装"></a>在 CentOS6.5 系统中安装</h3><p>第一次是在 CentOS 上，安装过程还是比较麻烦的，需要下载代码编译安装，依赖也需要一个一个手工安装，还有一个比较重要的问题需要指出，CentOS6.5 的 GLIBC 版本过低，需要手工升级，升级过程还是有一些风险的，因为需要替换系统底层库文件( <code>/usr/lib64/libstdc++.so.6</code>，可用 <code>strings /usr/lib64/libstdc++.so.6 | grep GLIBC</code> 的方式查看其版本)，曾新眼目睹某同事因为替换这一文件而搞崩掉一台机器（崩掉是指: 直接掉线，无法进入系统，无法进行任何操作），最后我找到一个折中的办法，安装新版 <code>glibc</code> 后并不直接替换系统原有文件，而是每次需要的时候手动指定加载（可直接写到一个文件里，需要时 source 一下即可），以运行 python 为例，代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /opt/glibc-2.17/lib/ld-linux-x86-64.so.2 --library-path /opt/glibc-2.17/lib:<span class="variable">$LD_LIBRART_PATH</span> python</div></pre></td></tr></table></figure></p>
 <p>上面语句中，python 之前是指定 GLIBC 版本，python 为本次执行的命令，可修改为你需要执行的命令。</p>
 <h3 id="在-MAC-系统中安装"><a href="#在-MAC-系统中安装" class="headerlink" title="在 MAC 系统中安装"></a>在 MAC 系统中安装</h3><p>第二次安装是在 macOS Sierra 系统中，当时 Tensorflow 已经支持 pip 安装了，安装过程十分简洁。</p>
-<h2 id="相关-Tensorflow-库文件"><a href="#相关-Tensorflow-库文件" class="headerlink" title="相关 Tensorflow 库文件"></a>相关 Tensorflow 库文件</h2><p>大部分内容位置该<a href="https://github.com/niumeng07/tensorflow/tree/master/tensorflow/contrib/learn/python/learn/estimators" target="_blank" rel="external">目录</a>中，包括<a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py" target="_blank" rel="external">dnn_linear_combined.py</a>, <a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/estimator.py" target="_blank" rel="external">estimator.py</a>。这两个文件是该实验的入口，其它还有一些内容需要熟悉，从两这个文件展开即可。</p>
+<h2 id="相关-Tensorflow-库文件"><a href="#相关-Tensorflow-库文件" class="headerlink" title="相关 Tensorflow 库文件"></a>相关 Tensorflow 库文件</h2><p>大部分内容位置该<a href="https://github.com/niumeng07/tensorflow/tree/master/tensorflow/contrib/learn/python/learn/estimators" target="_blank" rel="external">目录</a>中，包括<a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py" target="_blank" rel="external">dnn_linear_combined.py</a>, <a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/estimator.py" target="_blank" rel="external">estimator.py</a> 等。这两个文件是该实验的入口，其它还有一些内容需要熟悉，从这两个文件展开即可。</p>
 <h2 id="其它一些可用的库"><a href="#其它一些可用的库" class="headerlink" title="其它一些可用的库"></a>其它一些可用的库</h2><p>这一部分只是我了解过的，使用还不多，暂时写在这里，等尝试过后再展开。<br><a href="https://github.com/tflearn/tflearn/" target="_blank" rel="external">tf-learn</a><br><a href="https://github.com/yahoo/TensorFlowOnSpark" target="_blank" rel="external">TensorflowOnSpark</a>: 雅虎出品</p>
 <h2 id="Wide-amp-Deep-Model"><a href="#Wide-amp-Deep-Model" class="headerlink" title="Wide &amp; Deep Model"></a>Wide &amp; Deep Model</h2><p>本文的重点到这里才开始。</p>
 <h2 id="待展开。"><a href="#待展开。" class="headerlink" title="待展开。"></a>待展开。</h2>
@@ -328,7 +328,7 @@
         <p><span>Title:</span><a href="/posts/515729c0/">基于 Tensorflow 的 Google Wide &amp; Deep Learning Model</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Niumeng</a></p>
         <p><span>Created:</span>2017-03-13, 19:35:35</p>
-        <p><span>Updated:</span>2017-03-14, 00:09:04</p>
+        <p><span>Updated:</span>2017-03-14, 00:13:59</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/posts/515729c0/" title="基于 Tensorflow 的 Google Wide &amp; Deep Learning Model">https://niumeng07.github.io/posts/515729c0/</a>
             <span class="copy-path" data-clipboard-text="From https://niumeng07.github.io/posts/515729c0/　　By Niumeng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
