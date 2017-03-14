@@ -21,10 +21,12 @@
 <meta property="og:url" content="https://niumeng07.github.io/posts/515729c0/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
 <meta property="og:description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
-<meta property="og:updated_time" content="2017-03-14T00:31:25.000Z">
+<meta property="og:image" content="https://www.tensorflow.org/images/wide_n_deep.svg">
+<meta property="og:updated_time" content="2017-03-14T15:26:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 Tensorflow 的 Google Wide & Deep Learning Model">
 <meta name="twitter:description" content="Google 的 Tensorflow 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 Wide &amp;amp; Deep Model，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Bl">
+<meta name="twitter:image" content="https://www.tensorflow.org/images/wide_n_deep.svg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -311,13 +313,44 @@
 <p>本文采用实验记录的方式展开，可能也会存在许多问题，但这些问题可能大家也会遇到或者遇到过，希望能共同讨论。</p>
 <a id="more"></a>
 <h2 id="Tensorflow-的安装"><a href="#Tensorflow-的安装" class="headerlink" title="Tensorflow 的安装"></a>Tensorflow 的安装</h2><p>我在 CentOS6.5 和 macOS Sirrra 上分别安装过 Tensorflow。两次安装均是参考 Tensorflow <a href="https://www.tensorflow.org/install/" target="_blank" rel="external">官方 Intall 文档</a>。</p>
-<h3 id="在-CentOS6-5-系统中安装"><a href="#在-CentOS6-5-系统中安装" class="headerlink" title="在 CentOS6.5 系统中安装"></a>在 CentOS6.5 系统中安装</h3><p>第一次是在 CentOS 上，安装过程还是比较麻烦的，<a href="https://www.tensorflow.org/install/install_linux" target="_blank" rel="external">参考</a>，需要下载代码编译安装，依赖也需要一个一个手工安装，还有一个比较重要的问题需要指出，CentOS6.5 的 GLIBC 版本过低，需要手工升级，升级过程还是有一些风险的，因为需要替换系统底层库文件( <code>/usr/lib64/libstdc++.so.6</code>，可用 <code>strings /usr/lib64/libstdc++.so.6 | grep GLIBC</code> 的方式查看其版本)，曾新眼目睹某同事因为替换这一文件而搞崩掉一台机器（崩掉是指: 直接掉线，无法进入系统，无法进行任何操作），最后我找到一个折中的办法，安装新版 <code>glibc</code> 后并不直接替换系统原有文件，而是每次需要的时候手动指定加载（可直接写到一个文件里，需要时 source 一下即可），以运行 python 为例，代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /opt/glibc-2.17/lib/ld-linux-x86-64.so.2 --library-path /opt/glibc-2.17/lib:<span class="variable">$LD_LIBRART_PATH</span> python</div></pre></td></tr></table></figure></p>
+<h3 id="在-CentOS6-5-系统中安装"><a href="#在-CentOS6-5-系统中安装" class="headerlink" title="在 CentOS6.5 系统中安装"></a>在 CentOS6.5 系统中安装</h3><p>第一次是在 CentOS 上，安装过程还是比较麻烦的，<a href="https://www.tensorflow.org/install/install_linux" target="_blank" rel="external">参考</a>，需要下载代码编译安装，依赖也需要一个一个手工安装，但这些参照官网文档还是能一个个完成的，最后有一个比较重要的问题需要指出，CentOS6.5 的 GLIBC 版本过低，需要手工升级，升级过程还是有一些风险的，因为需要替换系统底层库文件( <code>/usr/lib64/libstdc++.so.6</code>，可用 <code>strings /usr/lib64/libstdc++.so.6 | grep GLIBC</code> 的方式查看其版本)，曾新眼目睹某同事因为替换这一文件而搞崩掉一台机器（崩掉是指: 直接掉线，无法进入系统，无法进行任何操作），最后我找到一个折中的办法，安装新版 <code>glibc</code> 后并不直接替换系统原有文件，而是每次需要的时候手动指定加载（可直接写到一个文件里，需要时 source 一下即可），以运行 python 为例，代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /opt/glibc-2.17/lib/ld-linux-x86-64.so.2 --library-path /opt/glibc-2.17/lib:<span class="variable">$LD_LIBRART_PATH</span> python</div></pre></td></tr></table></figure></p>
 <p>上面语句中，python 之前是指定 GLIBC 版本，python 为本次执行的命令，可修改为你需要执行的命令。</p>
 <h3 id="在-MAC-系统中安装"><a href="#在-MAC-系统中安装" class="headerlink" title="在 MAC 系统中安装"></a>在 MAC 系统中安装</h3><p>第二次安装是在 macOS Sierra 系统中，当时 Tensorflow 已经支持 pip 安装了，安装过程十分简洁，<a href="https://www.tensorflow.org/install/install_mac" target="_blank" rel="external">参考</a>。</p>
 <h2 id="相关-Tensorflow-库文件"><a href="#相关-Tensorflow-库文件" class="headerlink" title="相关 Tensorflow 库文件"></a>相关 Tensorflow 库文件</h2><p>大部分内容位置该<a href="https://github.com/niumeng07/tensorflow/tree/master/tensorflow/contrib/learn/python/learn/estimators" target="_blank" rel="external">目录</a>中，包括<a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py" target="_blank" rel="external">dnn_linear_combined.py</a>, <a href="https://github.com/niumeng07/tensorflow/blob/master/tensorflow/contrib/learn/python/learn/estimators/estimator.py" target="_blank" rel="external">estimator.py</a> 等。这两个文件是该实验的入口，其它还有一些内容需要熟悉，从这两个文件展开即可。</p>
-<h2 id="其它一些可用的库"><a href="#其它一些可用的库" class="headerlink" title="其它一些可用的库"></a>其它一些可用的库</h2><p>这一部分只是我了解过的，使用还不多，暂时写在这里，等尝试过后再展开。<br><a href="https://github.com/tflearn/tflearn/" target="_blank" rel="external">tf-learn</a>: 我也不清楚是哪个组织或哪些人开发这个基于 Tensorflow 的 API。不过我发现其<a href="http://tflearn.org/" target="_blank" rel="external">官网</a>是部署在 github 上的，可访问 <a href="tflearn.github.io">tflearn.github.io</a> 来访问官网。<br><a href="https://github.com/yahoo/TensorFlowOnSpark" target="_blank" rel="external">TensorflowOnSpark</a>: 雅虎出品，这是 Yahoo 开源其公司正在使用的 Tensorflow 与 Spark 结合运行的框架，已经在商业场景中得到了验证。<a href="http://yahoohadoop.tumblr.com/post/157196317141/open-sourcing-tensorflowonspark-distributed-deep" target="_blank" rel="external">参考文档</a>。</p>
+<h2 id="其它一些可用的库"><a href="#其它一些可用的库" class="headerlink" title="其它一些可用的库"></a>其它一些可用的库</h2><p>这一部分只是我了解过的，使用还不多，暂时写在这里，等尝试过后再展开。<br><strong> <a href="https://github.com/tflearn/tflearn/" target="_blank" rel="external">tf-learn</a>: </strong>  我也不清楚是哪个组织或哪些人开发这个基于 Tensorflow 的 API。不过我发现其<a href="http://tflearn.org/" target="_blank" rel="external">官网</a>是部署在 github 上的，感觉上不太像大厂的产物（毫无不敬之意），不是很系统，但做可以参考其代码尽快熟悉 Google Tensorflow。<br><strong> <a href="https://github.com/yahoo/TensorFlowOnSpark" target="_blank" rel="external">TensorflowOnSpark</a>: </strong> 雅虎出品，这是 Yahoo 开源其公司正在使用的 Tensorflow 与 Spark 结合运行的框架，已经在商业场景中得到了验证。<a href="http://yahoohadoop.tumblr.com/post/157196317141/open-sourcing-tensorflowonspark-distributed-deep" target="_blank" rel="external">参考文档</a>。</p>
 <h2 id="Wide-amp-Deep-Model"><a href="#Wide-amp-Deep-Model" class="headerlink" title="Wide &amp; Deep Model"></a>Wide &amp; Deep Model</h2><p>本文的重点到这里才开始。</p>
-<h2 id="待展开。"><a href="#待展开。" class="headerlink" title="待展开。"></a>待展开。</h2>
+<p>关于 Wide &amp; Deep 这个模型，Google 是用于 App 推荐，已经在 Google Play 上线，并取得了良好的效果。Google <a href="https://arxiv.org/pdf/1606.07792.pdf" target="_blank" rel="external">论文</a> 给出的数据如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">Offline AUC</th>
+<th style="text-align:center">Online Acquiition Gain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Wide(Control)</td>
+<td style="text-align:center">0.726</td>
+<td style="text-align:center">0%</td>
+</tr>
+<tr>
+<td style="text-align:center">Deep</td>
+<td style="text-align:center">0.722</td>
+<td style="text-align:center">+2.9%</td>
+</tr>
+<tr>
+<td style="text-align:center">Wide &amp; Deep</td>
+<td style="text-align:center">0.728</td>
+<td style="text-align:center">+3.9%</td>
+</tr>
+</tbody>
+</table>
+<p>其实从以上表格中，我们还可以看到一些有意义的事情：线下 AUC 变差，并不一定导致线上的效果变差，我从事于广告的 CTR 预估工作，效果离线主要评价标准就是 AUC，这其实也有一定的不合理之处。我认为有一个简单的原则，则模型不变的情况下，我们可以用 AUC，Accu 等标准作评价，并指导是否值得上线实验，但在模型自身发生变化的情况下，我们还是要去做线上的效果实验来得出具体结论。</p>
+<h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p><img title="模型结构" alt="模型结构" class="class1 class2" src="https://www.tensorflow.org/images/wide_n_deep.svg"></p>
+<p>上图中，<em> <font color="blue">左为 Wide 模型</font> </em>，Google 在其论文中描述，使用了 FTRL 的优化算法以 Batch 训练了 $~y=w^Tx~+b$，其中 $w$ 为参数向量，$x$为特征向量，$b$为截距向量，并把 $y$ 输入到 Logistic 分类器中，实际上，该模型实际上是一个传统的采用 Batch 训练的 LR 模型，但 Google 的论文中指出，其优化方法是 FTRL，此处 FTRL 的应用方法我还去研究。<br>与 LR 模型一样，这一部分对数据和特征有良好的记忆能力，但它同时需要人工的去指定特征，包括组合特征，也就是说需要人工去做特征工程，而不具备自主分析的能力。<br>上图 <em> <font color="blue">右侧的 Deep 模型</font> </em> 很好的弥补了这一不足，Deep 模型吸引人的地方恰好是你分析能力，他能自动找到一些特征之前的关联并应用。我认为，Deep 的不足之处，除论文和许多的博客指出的记忆能力不足外，我认为它可以帮助我们节省大量本应该消耗在特征工程上的时间。<br>上图<em> <font color="blue">中间位置，即把 Wide 模型和 Deep 模型做了结合，形成 Wide &amp; Deep 模型</font> </em>。</p>
+<p><strong> 未完 </strong></p>
+
       
     </div>
     
@@ -328,7 +361,7 @@
         <p><span>Title:</span><a href="/posts/515729c0/">基于 Tensorflow 的 Google Wide &amp; Deep Learning Model</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Niumeng</a></p>
         <p><span>Created:</span>2017-03-13, 19:35:35</p>
-        <p><span>Updated:</span>2017-03-14, 08:31:25</p>
+        <p><span>Updated:</span>2017-03-14, 23:26:58</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/posts/515729c0/" title="基于 Tensorflow 的 Google Wide &amp; Deep Learning Model">https://niumeng07.github.io/posts/515729c0/</a>
             <span class="copy-path" data-clipboard-text="From https://niumeng07.github.io/posts/515729c0/　　By Niumeng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -358,7 +391,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow-的安装"><span class="toc-number">1.</span> <span class="toc-text">Tensorflow 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-CentOS6-5-系统中安装"><span class="toc-number">1.1.</span> <span class="toc-text">在 CentOS6.5 系统中安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-MAC-系统中安装"><span class="toc-number">1.2.</span> <span class="toc-text">在 MAC 系统中安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关-Tensorflow-库文件"><span class="toc-number">2.</span> <span class="toc-text">相关 Tensorflow 库文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它一些可用的库"><span class="toc-number">3.</span> <span class="toc-text">其它一些可用的库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wide-amp-Deep-Model"><span class="toc-number">4.</span> <span class="toc-text">Wide & Deep Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待展开。"><span class="toc-number">5.</span> <span class="toc-text">待展开。</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow-的安装"><span class="toc-number">1.</span> <span class="toc-text">Tensorflow 的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-CentOS6-5-系统中安装"><span class="toc-number">1.1.</span> <span class="toc-text">在 CentOS6.5 系统中安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-MAC-系统中安装"><span class="toc-number">1.2.</span> <span class="toc-text">在 MAC 系统中安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关-Tensorflow-库文件"><span class="toc-number">2.</span> <span class="toc-text">相关 Tensorflow 库文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它一些可用的库"><span class="toc-number">3.</span> <span class="toc-text">其它一些可用的库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wide-amp-Deep-Model"><span class="toc-number">4.</span> <span class="toc-text">Wide & Deep Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型结构"><span class="toc-number">4.1.</span> <span class="toc-text">模型结构</span></a></li></ol></li></ol>
         
     </div>
     <style>
