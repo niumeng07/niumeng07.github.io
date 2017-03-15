@@ -45,7 +45,7 @@
 </table>
 <p>其实从以上表格中，我们还可以看到一些有意义的事情：线下 AUC 变差，并不一定导致线上的效果变差，我从事于广告的 CTR 预估工作，效果离线主要评价标准就是 AUC，这其实也有一定的不合理之处。我认为有一个简单的原则，则模型不变的情况下，我们可以用 AUC，Accu 等标准作评价，并指导是否值得上线实验，但在模型自身发生变化的情况下，我们还是要去做线上的效果实验来得出具体结论。</p>
 <h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p><img title="模型结构" alt="模型结构" class="class1 class2" src="https://www.tensorflow.org/images/wide_n_deep.svg"></p>
-<p>上图中，<em> <font color="blue">左为 Wide 模型</font> </em>，Google 在其论文中描述，使用了 FTRL 的优化算法以 Batch 训练了 $~y=w^Tx~+b$，其中 $w$ 为参数向量，$x$为特征向量，$b$为截距向量，并把 $y$ 输入到 Logistic 分类器中，实际上，该模型实际上是一个传统的采用 Batch 训练的 LR 模型，但 Google 的论文中指出，其优化方法是 FTRL，此处 FTRL 的应用方法我还去研究。<br>与 LR 模型一样，这一部分对数据和特征有良好的记忆能力，但它同时需要人工的去指定特征，包括组合特征，也就是说需要人工去做特征工程，而不具备自主分析的能力。<br>上图 <em> <font color="blue">右侧的 Deep 模型</font> </em> 很好的弥补了这一不足，Deep 模型吸引人的地方恰好是你分析能力，他能自动找到一些特征之前的关联并应用。我认为，Deep 的不足之处，除论文和许多的博客指出的记忆能力不足外，我认为它可以帮助我们节省大量本应该消耗在特征工程上的时间。<br>上图<em> <font color="blue">中间位置，即把 Wide 模型和 Deep 模型做了结合，形成 Wide &amp; Deep 模型</font> </em>。</p>
+<p>上图中，<em> <font color="blue">左为 Wide 模型</font> </em>，Google 在其论文中描述，使用了 FTRL 的优化算法以 Batch 训练了 $~y=w^Tx~+b$，其中 $w$ 为参数向量，$x$为特征向量，$b$为截距向量，并把 $y$ 输入到 Logistic 分类器中，实际上，该模型实际上是一个传统的采用 Batch 训练的 LR 模型，但 Google 的论文中指出，其优化方法是 FTRL，此处 FTRL 的应用方法我还去研究。<br>与 LR 模型一样，这一部分对数据和特征有良好的记忆能力，但它同时需要人工的去指定特征，包括组合特征，也就是说需要人工去做特征工程，而不具备自主分析的能力。<br>上图 <em> <font color="blue">右侧的 Deep 模型</font> </em> 很好的弥补了这一不足，Deep 模型吸引人的地方恰好是其分析能力，他能自动找到一些特征之前的关联并应用。我认为，Deep 的不足之处，除论文和许多的博客指出的记忆能力不足外，我认为它可以帮助我们节省大量本应该消耗在特征工程上的时间。<br>上图<em> <font color="blue">中间位置，即把 Wide 模型和 Deep 模型做了结合，形成 Wide &amp; Deep 模型</font> </em>。</p>
 <p><strong> 未完 </strong></p>
 ]]></content>
       
