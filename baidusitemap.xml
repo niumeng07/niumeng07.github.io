@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://niumeng07.github.io/posts/eb642ea4/</loc>
+    <lastmod>2017-03-18T11:04:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python 的多线程编程</title>
+        <pubTime>2017-03-12T15:12:43.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>并行编程</tag>
+         
+         
+           
+             
+              <breadCrumb title="备忘" url="https://niumeng07.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://niumeng07.github.io/posts/515729c0/</loc>
-    <lastmod>2017-03-15T00:31:43.000Z</lastmod>
+    <lastmod>2017-03-17T11:47:48.000Z</lastmod>
     <data>
         <display>
         <title>基于 Tensorflow 的 Google Wide & Deep Learning Model</title>
@@ -40,28 +62,6 @@
         <tag>Yelee</tag>
          
         <tag>Github Pages</tag>
-         
-         
-           
-             
-              <breadCrumb title="备忘" url="https://niumeng07.github.io/categories/%E5%A4%87%E5%BF%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://niumeng07.github.io/posts/eb642ea4/</loc>
-    <lastmod>2017-03-12T15:39:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python 的多线程编程</title>
-        <pubTime>2017-03-12T15:12:43.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>并行编程</tag>
          
          
            
