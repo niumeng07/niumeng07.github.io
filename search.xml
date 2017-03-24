@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[Work-Is-Work]]></title>
+      <url>https://niumeng07.github.io/posts/9af969b/</url>
+      <content type="html"><![CDATA[<p>今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。<br><a id="more"></a><br>工作中不同的人看这样的问题也会是不同的方面。我理解所有人，包括咬我的人，包括把它当枪使的人，包括只想把事情小型化的老大。<br>其实，一个团队能走到多大，看的是老大的格局。</p>
+<p>纪念。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 工作感触 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[基于 Tensorflow 的 Google Wide & Deep Learning Model]]></title>
       <url>https://niumeng07.github.io/posts/515729c0/</url>
       <content type="html"><![CDATA[<p>Google 的 <a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow</a> 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 <a href="https://www.tensorflow.org/tutorials/wide_and_deep" target="_blank" rel="external">Wide &amp; Deep Model</a>，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Blog 等只是解析了该模型怎么用，或者说是把 Google 的一些 Tutorial 翻译了一遍，但是并没有对使用过程中可能存在的问题做出深入分析，或者说并没有把可能遇到问题的地方展现出来。因此我希望在这一方面写一写自己的经历，供大家参考。</p>

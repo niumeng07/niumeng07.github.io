@@ -14,13 +14,10 @@
 <meta name="author" content="Niumeng" />
 
 
-    
-    
-
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Niumeng's Blog">
-<meta property="og:url" content="https://niumeng07.github.io/index.html">
+<meta property="og:url" content="https://niumeng07.github.io/categories/随笔/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Niumeng's Blog">
@@ -51,13 +48,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Niumeng&#39;s Blog</title>
+<title>Category: 随笔 | Niumeng&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,11 +61,11 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
+        isHome: false,
         isPost: false,
         isArchive: false,
         isTag: false,
-        isCategory: false,
+        isCategory: true,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: true
@@ -266,284 +261,58 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Work-Is-Work" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/posts/9af969b/" class="article-date">
-      <time datetime="2017-03-24T14:55:58.000Z" itemprop="datePublished">2017-03-24</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/posts/9af969b/" class="archive-article-date">
+      <time datetime="2017-03-24T14:55:58.000Z" itemprop="datePublished">03-24</time>
 </a>
 
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/posts/9af969b/">Work-Is-Work</a>
+      <a class="archive-article-title" href="/posts/9af969b/">Work-Is-Work</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-              <p>今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/随笔/">随笔</a>
     </div>
 
 
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作感触/">工作感触</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/posts/9af969b/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
-
   
-    <article id="post-Learn-Tensorflow" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/posts/515729c0/" class="article-date">
-      <time datetime="2017-03-13T11:35:35.000Z" itemprop="datePublished">2017-03-13</time>
-</a>
-
-
-    </div>
+    </div></section>
   
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/515729c0/">基于 Tensorflow 的 Google Wide &amp; Deep Learning Model</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Google 的 <a href="https://www.tensorflow.org/">Tensorflow</a> 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 <a href="https://www.tensorflow.org/tutorials/wide_and_deep">Wide &amp; Deep Model</a>，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Blog 等只是解析了该模型怎么用，或者说是把 Google 的一些 Tutorial 翻译了一遍，但是并没有对使用过程中可能存在的问题做出深入分析，或者说并没有把可能遇到问题的地方展现出来。因此我希望在这一方面写一写自己的经历，供大家参考。</p>
-<p>本文采用实验记录的方式展开，可能也会存在许多问题，但这些问题可能大家也会遇到或者遇到过，希望能共同讨论。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/学习-探索/">学习&探索</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tensorflow/">Tensorflow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wide-Deep/">Wide & Deep</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/posts/515729c0/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Python-Multi-thread" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/posts/eb642ea4/" class="article-date">
-      <time datetime="2017-03-12T15:12:43.000Z" itemprop="datePublished">2017-03-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/eb642ea4/">Python 的多线程编程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>虽然使用 Python 已经很长时间，但一般用于不太复杂的数据处理任务，最近研究 Tensorflow 时，需要处理大批量数据，Python 处理速度慢的问的显现出来，因为特意研究了一下 Python 的并行编程，记录在此，以备忘。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/备忘/">备忘</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并行编程/">并行编程</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/posts/eb642ea4/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hello" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/posts/7998670d/" class="article-date">
-      <time datetime="2017-03-10T15:12:43.000Z" itemprop="datePublished">2017-03-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/7998670d/">基于 Github Pages 和 Hexo 搭建博客过程备忘</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。<br><br>该博客基于<a href="https://hexo.io/docs/">官网手册</a>说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 <a href="https:www.google.com/ncr">Google</a>， 都能找到答案。在此记录一下使用的工具，算是备忘。<br><br>该博客基于 <a href="https://pages.github.com/">Github Pages</a> 和 <a href="https://hexo.io/">Hexo</a> 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也可以在 VPS 搭网站，但我目前还没确定选用哪个框架，如果有高手不小心进了这里，倒是可以给点建议。先行谢过。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/备忘/">备忘</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Pages/">Github Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yelee/">Yelee</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/posts/7998670d/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
     <div class="outer">

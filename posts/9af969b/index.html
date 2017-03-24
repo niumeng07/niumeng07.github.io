@@ -14,16 +14,17 @@
 <meta name="author" content="Niumeng" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Niumeng's Blog">
-<meta property="og:url" content="https://niumeng07.github.io/index.html">
+<meta name="description" content="今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Work-Is-Work">
+<meta property="og:url" content="https://niumeng07.github.io/posts/9af969b/index.html">
 <meta property="og:site_name" content="Niumeng's Blog">
+<meta property="og:description" content="今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。">
+<meta property="og:updated_time" content="2017-03-24T15:01:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niumeng's Blog">
+<meta name="twitter:title" content="Work-Is-Work">
+<meta name="twitter:description" content="今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,13 +52,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Niumeng&#39;s Blog</title>
+<title>Work-Is-Work | Niumeng&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +65,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -264,9 +263,7 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Work-Is-Work" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Work-Is-Work" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/posts/9af969b/" class="article-date">
@@ -284,255 +281,117 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/9af969b/">Work-Is-Work</a>
+    <h1 class="article-title" itemprop="name">
+      Work-Is-Work
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/随笔/">随笔</a>
     </div>
 
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作感触/">工作感触</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/posts/9af969b/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Learn-Tensorflow" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/posts/515729c0/" class="article-date">
-      <time datetime="2017-03-13T11:35:35.000Z" itemprop="datePublished">2017-03-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/515729c0/">基于 Tensorflow 的 Google Wide &amp; Deep Learning Model</a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>Google 的 <a href="https://www.tensorflow.org/">Tensorflow</a> 已经出来很长时间，这的确是一个非常实用的框架。前不久，Google 又发布了一个机器学习模型 <a href="https://www.tensorflow.org/tutorials/wide_and_deep">Wide &amp; Deep Model</a>，这一模型把传统的线性模型( LR )和深度学习模型( CNN、DNN )等结合在一起，目的是把线性模型的记忆能力和深度学习模型的分析能力结合在一起。近期在实践该模型，遇到很多坑，在 Google 上搜索时发现，大部分 Blog 等只是解析了该模型怎么用，或者说是把 Google 的一些 Tutorial 翻译了一遍，但是并没有对使用过程中可能存在的问题做出深入分析，或者说并没有把可能遇到问题的地方展现出来。因此我希望在这一方面写一写自己的经历，供大家参考。</p>
-<p>本文采用实验记录的方式展开，可能也会存在许多问题，但这些问题可能大家也会遇到或者遇到过，希望能共同讨论。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/学习-探索/">学习&探索</a>
-    </div>
-
+        <p>今天在完全不知道为什么的情况下被狗咬了，而且还是当着老大的面的被咬了。<br><a id="more"></a><br>工作中不同的人看这样的问题也会是不同的方面。我理解所有人，包括咬我的人，包括把它当枪使的人，包括只想把事情小型化的老大。<br>其实，一个团队能走到多大，看的是老大的格局。</p>
+<p>纪念。</p>
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tensorflow/">Tensorflow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wide-Deep/">Wide & Deep</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/posts/515729c0/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Python-Multi-thread" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/posts/eb642ea4/" class="article-date">
-      <time datetime="2017-03-12T15:12:43.000Z" itemprop="datePublished">2017-03-12</time>
-</a>
-
-
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/posts/9af969b/">Work-Is-Work</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Niumeng</a></p>
+        <p><span>Created:</span>2017-03-24, 22:55:58</p>
+        <p><span>Updated:</span>2017-03-24, 23:01:18</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/posts/9af969b/" title="Work-Is-Work">https://niumeng07.github.io/posts/9af969b/</a>
+            <span class="copy-path" data-clipboard-text="From https://niumeng07.github.io/posts/9af969b/　　By Niumeng" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/eb642ea4/">Python 的多线程编程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>虽然使用 Python 已经很长时间，但一般用于不太复杂的数据处理任务，最近研究 Tensorflow 时，需要处理大批量数据，Python 处理速度慢的问的显现出来，因为特意研究了一下 Python 的并行编程，记录在此，以备忘。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/备忘/">备忘</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并行编程/">并行编程</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/posts/eb642ea4/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hello" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/posts/7998670d/" class="article-date">
-      <time datetime="2017-03-10T15:12:43.000Z" itemprop="datePublished">2017-03-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/7998670d/">基于 Github Pages 和 Hexo 搭建博客过程备忘</a>
-    </h1>
-  
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/posts/515729c0/">
+                    基于 Tensorflow 的 Google Wide &amp; Deep Learning Model
+                </a>
+            </div>
+        
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>做为程序员，怎么能用现成的博客呢。只有用 Github 搭起的博客才显得高大上，才显得 Geek。<br><br>该博客基于<a href="https://hexo.io/docs/">官网手册</a>说明搭建，同时参考了网上许多教程，可能是每个人操作的环境不一样，中间出现了一些小问题，但毕竟有 <a href="https:www.google.com/ncr">Google</a>， 都能找到答案。在此记录一下使用的工具，算是备忘。<br><br>该博客基于 <a href="https://pages.github.com/">Github Pages</a> 和 <a href="https://hexo.io/">Hexo</a> 完成，至于为什么选用这个组合，因为这个组合网上教程很多，而且简单。另外也可以在 VPS 搭网站，但我目前还没确定选用哪个框架，如果有高手不小心进了这里，倒是可以给点建议。先行谢过。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/备忘/">备忘</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Pages/">Github Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yelee/">Yelee</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/posts/7998670d/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Work-Is-Work　| Niumeng's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -540,10 +399,57 @@
 
 
 
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://niumeng07.github.io/posts/9af969b/';
+            this.page.identifier = 'posts/9af969b/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//niumeng.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
 
 
-  
-  
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/posts/515729c0/" title="Next: 基于 Tensorflow 的 Google Wide &amp; Deep Learning Model">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/posts/9af969b/">Work-Is-Work</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/515729c0/">基于 Tensorflow 的 Google Wide & Deep Learning Model</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/eb642ea4/">Python 的多线程编程</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/7998670d/">基于 Github Pages 和 Hexo 搭建博客过程备忘</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
 </div>
       <footer id="footer">
     <div class="outer">
