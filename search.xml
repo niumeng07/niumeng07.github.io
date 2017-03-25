@@ -6,9 +6,21 @@
     <entry>
       <title><![CDATA[LeetCode]]></title>
       <url>https://niumeng07.github.io/posts/6096f3d5/</url>
-      <content type="html"><![CDATA[<p><a href="https://github.com/niumeng07/code-dev" target="_blank" rel="external">https://github.com/niumeng07/code-dev</a></p>
+      <content type="html"><![CDATA[<p><a href="https://github.com/niumeng07/code-dev" target="_blank" rel="external">https://github.com/niumeng07/code-dev</a><br><a id="more"></a></p>
 ]]></content>
       
+        <categories>
+            
+            <category> 学习&amp;探索 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
         
     </entry>
     
